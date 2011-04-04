@@ -19,6 +19,7 @@ module Geni
     attr_reader :mugshot_urls
     attr_reader :relationship
     attr_reader :is_alive
+    attr_reader :unions
     
     def parents
       immediate_family.parents
@@ -115,5 +116,10 @@ module Geni
         })
       end
     end
+
+    def union_ids
+      @unions.collect { |node| node.split('-').last }
+    end
+
   end
 end

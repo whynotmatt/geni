@@ -78,4 +78,24 @@ describe Geni::Family do
     sibling_names.should include('Luc Moiny')
     sibling_names.should include('Armelle MOINY')
   end
+
+  it 'has parent ids' do
+    family = @client.get_profile('90990739').immediate_family
+    family.parent_ids.should =~ ['90990897','90990889']
+  end
+
+  it 'has partner ids' do
+    family = @client.get_profile('90990739').immediate_family
+    family.partner_ids.should =~ ['90990730']
+  end
+
+  it 'has children ids' do
+    family = @client.get_profile('90990739').immediate_family
+    family.children_ids.should =~ ['90990832','90990843','90990667']
+  end
+
+  it 'has sibiling ids' do
+    family = @client.get_profile('90990739').immediate_family
+    family.sibling_ids.should =~ ['90990985','90990977','90990923','90990957']
+  end
 end
