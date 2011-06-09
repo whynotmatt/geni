@@ -118,7 +118,7 @@ module Geni
     end
 
     def union_ids
-      @unions.collect { |node| node.split('-').last }
+      @unions.collect { |node| node.split('-').last } if @unions and @unions.is_a?(Array)
     end
 
   end

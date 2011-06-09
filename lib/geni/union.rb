@@ -11,11 +11,11 @@ module Geni
     end
 
     def partner_ids
-       @partners.collect { |uri| uri.split('-').last }
+       @partners.collect { |uri| uri.split('-').last } if @partners and @partners.is_a?(Array)
     end
 
     def children_ids
-      @children.collect { |uri| uri.split('-').last }
+      @children.collect { |uri| uri.split('-').last } if @children and @children.is_a?(Array)
     end
   end
 end
